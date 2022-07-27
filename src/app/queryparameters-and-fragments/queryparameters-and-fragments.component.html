@@ -1,0 +1,14 @@
+<header>Query Parameters and Fragments to the Url Route with the Template and Program</header>
+<div>
+ <header>From Template</header>
+  <button>
+    <a routerLink="/loadComponentComponent"
+    [queryParams]="{page:1,search:'abc'}"
+    [fragment]="'load'">load-component</a>
+  </button>
+</div>
+
+<div>
+<header>From Program</header>
+<button (click)="onClick()">load-component</button>
+</div>
