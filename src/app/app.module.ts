@@ -14,6 +14,7 @@ import { QueryparametersAndFragmentsComponent } from './queryparameters-and-frag
 import { LoadComponentComponent } from './queryparameters-and-fragments/load-component/load-component.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { WildCardComponent } from './wild-card/wild-card.component';
 
 
 
@@ -31,7 +32,8 @@ const routes: Routes = [
     path: 'parent', component: ParentComponent, children: [
       { path: ':id', component: ChildComponent }
     ]
-  }
+  },
+  { path: '**', component: WildCardComponent }
 ];
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ const routes: Routes = [
     QueryparametersAndFragmentsComponent,
     LoadComponentComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    WildCardComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes)
