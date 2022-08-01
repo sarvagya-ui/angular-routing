@@ -15,6 +15,7 @@ import { LoadComponentComponent } from './queryparameters-and-fragments/load-com
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { WildCardComponent } from './wild-card/wild-card.component';
+import { StaticDataPassingComponent } from './static-data-passing/static-data-passing.component';
 
 
 
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: ':id', component: ChildComponent }
     ]
   },
+  { path: 'staticdata', component: StaticDataPassingComponent  , data:{id:1,name:'abc'}},
   { path: '**', component: WildCardComponent }
 ];
 @NgModule({
@@ -49,7 +51,8 @@ const routes: Routes = [
     LoadComponentComponent,
     ParentComponent,
     ChildComponent,
-    WildCardComponent
+    WildCardComponent,
+    StaticDataPassingComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes)
